@@ -52,12 +52,11 @@ int main(int argc, char **argv)
         /* Receiving file size */
         recv(client_socket, buffer, BUFSIZ, 0);
         file_size = atoi(buffer);
-        //fprintf(stdout, "\nFile size : %d\n", file_size);
 
         received_file = fopen(FILENAME, "w");
         if (received_file == NULL)
         {
-                fprintf(stderr, "Failed to open file foo --> %s\n", strerror(errno));
+                fprintf(stderr, "Failed to open file --> %s\n", strerror(errno));
 
                 exit(EXIT_FAILURE);
         }
